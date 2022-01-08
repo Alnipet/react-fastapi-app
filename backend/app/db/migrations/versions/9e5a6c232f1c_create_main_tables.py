@@ -6,9 +6,9 @@ Create Date: 2021-11-21 19:14:26.068005
 
 """
 from typing import Tuple
-from alembic import op
-import sqlalchemy as sa
 
+import sqlalchemy as sa
+from alembic import op
 
 # revision identifiers, used by Alembic
 revision = '9e5a6c232f1c'
@@ -31,6 +31,7 @@ def create_updated_at_trigger() -> None:
         """
     )
 
+
 def timestamps(indexed: bool = False) -> Tuple[sa.Column, sa.Column]:
     return (
         sa.Column(
@@ -49,6 +50,7 @@ def timestamps(indexed: bool = False) -> Tuple[sa.Column, sa.Column]:
         ),
     )
 
+
 def create_cleanings_table() -> None:
     op.create_table(
         "cleanings",
@@ -57,7 +59,18 @@ def create_cleanings_table() -> None:
         sa.Column("description", sa.Text, nullable=True),
         sa.Column("cleaning_type", sa.Text, nullable=False, server_default="spot_clean"),
         sa.Column("price", sa.Numeric(10, 2), nullable=False),
+        *timestamps(indexed=True),
     )
+    op.execute(
+        """
+        CREATE TRIGGER update_cleanings_modtime
+            BEFORE UPDATE
+            ON cleanings
+            FOR EACH ROW
+        EXECUTE PROCEDURE update_updated_at_column();
+        """
+    )
+
 
 def create_users_table() -> None:
     op.create_table(
@@ -82,12 +95,38 @@ def create_users_table() -> None:
         """
     )
 
+
+def create_profiles_table() -> None:
+    op.create_table(
+        "profiles",
+        sa.Column("id", sa.Integer, primary_key=True),
+        sa.Column("full_name", sa.Text, nullable=True),
+        sa.Column("phone_number", sa.Text, nullable=True),
+        sa.Column("bio", sa.Text, nullable=True, server_default=""),
+        sa.Column("image", sa.Text, nullable=True),
+        sa.Column("user_id", sa.Integer, sa.ForeignKey("users.id", ondelete="CASCADE")),
+        *timestamps(),
+    )
+    op.execute(
+        """
+        CREATE TRIGGER update_profiles_modtime
+            BEFORE UPDATE
+            ON profiles
+            FOR EACH ROW
+        EXECUTE PROCEDURE update_updated_at_column();
+        """
+    )
+
+
 def upgrade() -> None:
     create_updated_at_trigger()
     create_cleanings_table()
     create_users_table()
+    create_profiles_table()
+
 
 def downgrade() -> None:
+    op.drop_table("profiles")
     op.drop_table("users")
     op.drop_table("cleanings")
     op.execute("DROP FUNCTION update_updated_at_column")

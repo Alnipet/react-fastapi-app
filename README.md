@@ -49,4 +49,10 @@
 > [get-the-username-and-password](https://fastapi.tiangolo.com/tutorial/security/simple-oauth2/#get-the-username-and-password)
 >
 > [run-it](https://fastapi.tiangolo.com/tutorial/security/first-steps/#run-it)
-> 
+
+[9]
+> [select_queries_with_joins](https://sqlbolt.com/lesson/select_queries_with_joins)
+>
+> [Alembic](https://alembic.sqlalchemy.org/en/latest/tutorial.html)
+>
+> [sqlalchemy constraints](https://docs.sqlalchemy.org/en/13/core/constraints.html)
