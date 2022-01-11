@@ -56,3 +56,12 @@
 > [Alembic](https://alembic.sqlalchemy.org/en/latest/tutorial.html)
 >
 > [sqlalchemy constraints](https://docs.sqlalchemy.org/en/13/core/constraints.html)
+
+[10]
+> [Dependencies in path operation decorators](https://fastapi.tiangolo.com/tutorial/dependencies/dependencies-in-path-operation-decorators/#dependencies-in-path-operation-decorators)
+>
+> [fastapi-permissions](https://github.com/holgi/fastapi-permissions)
+>
+> [fastapi_contrib](https://github.com/identixone/fastapi_contrib)
+>
+> [fastapi-realworld-example-app](https://github.com/nsidnev/fastapi-realworld-example-app)
