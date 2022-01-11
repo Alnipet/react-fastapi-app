@@ -65,3 +65,16 @@
 > [fastapi_contrib](https://github.com/identixone/fastapi_contrib)
 >
 > [fastapi-realworld-example-app](https://github.com/nsidnev/fastapi-realworld-example-app)
+
+[11]
+> [tutorial-transactions](https://www.postgresql.org/docs/12/tutorial-transactions.html)
+>
+> [transactions](https://www.encode.io/databases/connections_and_transactions/#transactions)
+>
+> [params](https://fastapi.tiangolo.com/tutorial/path-params/)
+>
+> [dependencies-in-path-operation-decorators](https://fastapi.tiangolo.com/tutorial/dependencies/dependencies-in-path-operation-decorators/)
+>
+> [sql-databases](https://fastapi.tiangolo.com/tutorial/sql-databases/)
+>
+> [build-high-performing-apps-with-the-python-fastapi-framework](https://www.toptal.com/python/build-high-performing-apps-with-the-python-fastapi-framework)
