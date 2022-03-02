@@ -78,3 +78,6 @@
 > [sql-databases](https://fastapi.tiangolo.com/tutorial/sql-databases/)
 >
 > [build-high-performing-apps-with-the-python-fastapi-framework](https://www.toptal.com/python/build-high-performing-apps-with-the-python-fastapi-framework)
+
+[12]
+> [constrained-types](https://pydantic-docs.helpmanual.io/usage/types/#constrained-types)
