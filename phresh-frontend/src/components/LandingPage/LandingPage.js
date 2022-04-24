@@ -44,25 +44,25 @@ const StyledEuiPageContentBody = styled(EuiPageContentBody)`
 `
 
 const carouselItems = [
-  { label: "dorm room", content: <img src={dorm} alt="bed" /> },
-  { label: "bedroom", content: <img src={bedroom} alt="bedroom" /> },
-  { label: "bathroom", content: <img src={bathroom} alt="bathroom" /> },
-  { label: "living room", content: <img src={livingRoom} alt="living room" /> },
-  { label: "kitchen", content: <img src={kitchen} alt="kitchen" /> },
-  { label: "reading room", content: <img src={readingRoom} alt="reading room" /> },
-  { label: "tv room", content: <img src={tvRoom} alt="tv room" /> }
+  { label: "квартира", content: <img src={livingRoom} alt="living room" /> },
+  { label: "комната", content: <img src={dorm} alt="bed" /> },
+  { label: "спальня", content: <img src={bedroom} alt="bedroom" /> },
+  { label: "ванная", content: <img src={bathroom} alt="bathroom" /> },
+  { label: "кухня", content: <img src={kitchen} alt="kitchen" /> },
+  { label: "библиотека", content: <img src={readingRoom} alt="reading room" /> },
+  { label: "гостинная", content: <img src={tvRoom} alt="tv room" /> }
 ]
 
 
 export default function LandingPage(props) {
   const { current } = useCarousel(carouselItems, 3000)
-  
+
   return (
     <StyledEuiPage>
       <EuiPageBody component="section">
         <EuiFlexGroup direction="column" alignItems="center">
           <EuiFlexItem>
-            <LandingTitle>Phresh Cleaners</LandingTitle>
+            <LandingTitle>Фреш Клининг</LandingTitle>
           </EuiFlexItem>
           <EuiFlexItem>
             <CarouselTitle items={carouselItems} current={current} />
@@ -85,4 +85,3 @@ export default function LandingPage(props) {
     </StyledEuiPage>
   )
 }
-

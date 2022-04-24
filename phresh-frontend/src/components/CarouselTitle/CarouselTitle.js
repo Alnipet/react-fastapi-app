@@ -40,7 +40,7 @@ const AnimatedCarouselTitle = styled.span`
 
 const transitionDuration = 0.4
 const transitionEase = [0.68, -0.55, 0.265, 1.55]
-const statement = `For busy people who need their`
+const statement = `Для тех кто занят, но хочет чтобы их`
 
 export default function CarouselTitle({ items = [], current }) {
 
@@ -78,10 +78,9 @@ export default function CarouselTitle({ items = [], current }) {
             </AnimatedCarouselTitle>
           </AnimatePresence>
 
-          <h1>cleaned.</h1>
+          <h1>была в порядке.</h1>
         </TitleWrapper>
       </EuiTitle>
     </AnimatedTitle>
   )
 }
-

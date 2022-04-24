@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import {
   EuiAvatar,
   EuiIcon,
@@ -8,35 +8,36 @@ import {
   EuiHeaderSectionItemButton,
   EuiHeaderLinks,
   EuiHeaderLink,
-} from "@elastic/eui"
-import loginIcon from "../../assets/img/loginIcon.svg"
-import styled from "styled-components"
+} from "@elastic/eui";
+import loginIcon from "../../assets/img/loginIcon.svg";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const LogoSection = styled(EuiHeaderLink)`
   padding: 0 2rem;
-`
+`;
 
-export default function Navbar({ ...props }) {
+export default function Navbar({ user, ...props }) {
   return (
     <EuiHeader style={props.style || {}}>
       <EuiHeaderSection>
         <EuiHeaderSectionItem border="right">
           <LogoSection href="/">
-            <EuiIcon type="cloudDrizzle" color="#1E90FF" size="l" /> Phresh
+            <EuiIcon type="cloudDrizzle" color="#1E90FF" size="l" /> Фреш
           </LogoSection>
         </EuiHeaderSectionItem>
         <EuiHeaderSectionItem border="right">
           <EuiHeaderLinks aria-label="app navigation links">
             <EuiHeaderLink iconType="tear" href="#">
-              Find cleaners
+              Найти уборщиков
             </EuiHeaderLink>
 
             <EuiHeaderLink iconType="tag" href="#">
-              Find jobs
+              Найти работу
             </EuiHeaderLink>
 
             <EuiHeaderLink iconType="help" href="#">
-              Help
+              Помощь
             </EuiHeaderLink>
           </EuiHeaderLinks>
         </EuiHeaderSectionItem>
@@ -44,25 +45,24 @@ export default function Navbar({ ...props }) {
 
       <EuiHeaderSection>
         <EuiHeaderSectionItemButton aria-label="User avatar">
-
-          {/* тут видимо что-то с бэка прилетать должно, и не работает поэтому я там костыль вставил ниже
-
           {user?.profile ? (
-            <EuiAvatar size="l" name={user.profile.full_name} imageUrl={user.profile.image} />
+            <EuiAvatar
+              size="l"
+              name={user.profile.full_name}
+              imageUrl={user.profile.image}
+            />
           ) : (
-            <EuiAvatar size="l" color="#1E90FF" name="user" imageUrl={loginIcon} />
+            <Link to="/login">
+              <EuiAvatar
+                size="l"
+                color="#1E90FF"
+                name="user"
+                imageUrl={loginIcon}
+              />
+            </Link>
           )}
-
-          */}
-
-          {/* вот заглушка-костыль */}
-          <EuiAvatar size="l" color="#1E90FF" name="user" imageUrl={loginIcon} />
-
         </EuiHeaderSectionItemButton>
       </EuiHeaderSection>
-
-      
     </EuiHeader>
-  )
+  );
 }
-
