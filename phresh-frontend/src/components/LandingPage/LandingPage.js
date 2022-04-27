@@ -31,6 +31,7 @@ const LandingTitle = styled.h1`
 `
 
 const StyledEuiPageContent = styled(EuiPageContent)`
+  width: 400px;
   border-radius: 50%;
 `
 const StyledEuiPageContentBody = styled(EuiPageContentBody)`
@@ -74,7 +75,7 @@ export default function LandingPage(props) {
             <Carousel items={carouselItems} current={current} />
           </EuiFlexItem>
           <EuiFlexItem >
-            <StyledEuiPageContent horizontalPosition="center" verticalPosition="center" borderRadius="">
+            <StyledEuiPageContent verticalPosition="center" borderRadius="">
               <StyledEuiPageContentBody>
                 <img src={heroGirl} alt="girl" />
               </StyledEuiPageContentBody>

@@ -19,10 +19,9 @@ const CarouselWrapper = styled.div`
   }
 `
 const StyledEuiPanel = styled(EuiPanel)`
-  max-width: 450px;
-  max-height: 450px;
-  max-width: 450px;
-  max-height: 450px;
+
+  width: 400px;
+  max-height: 400px;
   border-radius: 50%;
 
   & > img {
@@ -35,7 +34,7 @@ const StyledEuiPanel = styled(EuiPanel)`
     width: calc(100vw - 25px);
   }
 `
-const transitionDuration = 0.4
+const transitionDuration = 0.3
 const transitionEase = [0.68, -0.55, 0.265, 1.55]
 
 
@@ -68,4 +67,3 @@ export default function Carousel({ items = [], current } ) {
     </CarouselWrapper>
   )
 }
-
