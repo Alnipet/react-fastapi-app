@@ -1,3 +1,7 @@
+![GitHub last commit](https://img.shields.io/github/last-commit/Alnipet/react-fastapi-app)
+![GitHub top language](https://img.shields.io/github/languages/top/Alnipet/react-fastapi-app)
+![GitHub language](https://img.shields.io/github/languages/count/Alnipet/react-fastapi-app)
+
 ## Управление миграциями
 
 Заходим внутрь контейнера
